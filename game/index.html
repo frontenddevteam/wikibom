@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+      
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    </head>
+    <body>
+        <h1>Candidate</h1>
+        <h3>Clock : <span id="clock"></span></h3>
+        <button onclick="enterGame()">Enter Game</button>
+        <script rel="preload" src="/socket.io/socket.io.js" as="script"></script>
+        <script>
+            var socket = io.connect('http://localhost:8080');
+            socket.on('connection', ()=>{
+                console.log('connected');
+            });
+            socket.on('CLOCK', function (data) {
+                  console.log(data);
+                  document.getElementById('clock').innerHTML = data.mess;
+                  //socket.emit('my other event', { my: 'data' });
+                });
+            let sendGreeting = ()=>{
+                
+            }
+        </script>
+    </body>
+</html>

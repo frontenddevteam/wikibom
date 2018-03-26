@@ -1,0 +1,55 @@
+<div class="card bg-light">
+    <div class="card-header">
+        <h4 class="card-title text-success">Review Question</h4>
+    </div>
+    <div class="card-body">
+        <table class="table">
+
+            <tr>
+                <td>Title</td>
+                <td>{{$ctrl.question.title}}</td>
+            </tr>
+            <tr>
+                    <td>Category</td>
+                    <td>{{$ctrl.question.category}}</td>
+                </tr>
+            <tr>
+                <td>Option A</td>
+                <td>{{$ctrl.question.optionA}}</td>
+            </tr>
+            <tr>
+                <td>Option B</td>
+                <td>{{$ctrl.question.optionB}}</td>
+            </tr>
+            <tr>
+                <td>Option C</td>
+                <td>{{$ctrl.question.optionC}}</td>
+            </tr>
+            <tr>
+                <td>Option D</td>
+                <td>{{$ctrl.question.optionD}}</td>
+            </tr>
+            <tr>
+                <td>Answer</td>
+                <td>{{$ctrl.question.answer}}</td>
+            </tr>
+            <tr>
+                <td>Level</td>
+                <td>
+                    <i class="fa fa-star fa-2x text-{{$ctrl.question.level}}"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>Explanation</td>
+                <td>{{$ctrl.question.explanation}}</td>
+            </tr>
+            <tr class="text-muted">
+                    <td>Date created</td>
+                    <td>{{$ctrl.question.dateCreated | date:'MM/dd/yyyy @ h:mma'}}</td>
+                </tr>
+        </table>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-sm btn-outline-success" href="#!/questionlist"><i class="fa fa-reply"></i> Back</a>
+    </div>
+</div>

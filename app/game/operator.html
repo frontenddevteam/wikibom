@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="wimApp">
+  <head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <script rel="preload" src="bower_components/angular/angular.js" as="script"></script>
+    <script rel="preload" src="bower_components/angular-route/angular-route.js" as="script"></script>
+    <script rel="preload" src="/socket.io/socket.io.js" as="script"></script>
+    <script rel="preload" src="app.js"></script>
+  </head>
+  <body>
+
+    This is index 
+    <button onclick="sendAction('START_GAME');"/>Start Game </body>
+    <script>
+      
+      let socket = io.connect({reconnect: true});
+      socket.on('START_GAME',(msg)=>{
+        console.log(msg);
+      })
+      let sendAction = (action)=>{
+        socket.emit(action, {mess : 'heelo'});
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <h1>Game Show Operator</h1>
+    <h3>From server : <span id="mess"></span></h3>
+    
+    <button onclick="startGame()">Start Game</button>
+    <button onclick="sendPopQuiz()">Send Pop Quiz</button>
+    <script rel="preload" src="/socket.io/socket.io.js" as="script"></script>
+    <script>
+        var socket = io.connect('http://localhost:8080/operatornsp');
+
+        socket.on('WELCOME', function (data) {
+            console.log(data);
+        });
+        socket.on('START_GAME',(data)=>{
+            document.getElementById('mess').innerHTML = data.mess;
+        })
+        let startGame = ()=>{
+            console.log('Send to server');
+            socket.emit('START_GAME',{mess : 'start game'});
+        }
+
+        socket.on('SEND_POP_QUIZ',(data)=>{
+            document.getElementById('mess').innerHTML = data.mess;
+        })
+        let sendPopQuiz = ()=>{
+            console.log('Send to server');
+            socket.emit('SEND_POP_QUIZ',{mess : 'SEND_POP_QUIZ'});
+        }
+        
+    </script>
+</body>
+
+</html>
