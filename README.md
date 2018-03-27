@@ -7,3 +7,4 @@ The app start on port 8080.
 Access : http://localhost:8080
 User name : 1
 Password : 1
+test
