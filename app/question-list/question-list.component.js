@@ -1,12 +1,13 @@
 angular.module('questionList')
     .component('questionList', {
         templateUrl: 'question-list/question-list.template.html',
-        controller: function questionListCtrl($http) {
+        controller: function questionListCtrl($http, $routeParams) {
             console.log('list ' + Date.now());
             let self = this;
             this.questionList = [];
             this.selected = false;
             this.allSelected = false;
+            this.pageCurrent = $routeParams.pageNumber;
 
             this.selectedIndexList = [];
             $http.get('api/questionlist').then(function (response) {

@@ -8,6 +8,9 @@ config(['$locationProvider', '$routeProvider',
       when('/questionlist', {
         template: '<question-list></question-list>'
       }).
+      when('/questionlist/:pageNumber', {
+        template: '<question-list></question-list>'
+      }).
       when('/questionform', {
         template: '<question-form></question-form>'
       }).
