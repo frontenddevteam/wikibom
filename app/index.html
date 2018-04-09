@@ -57,6 +57,10 @@
                   <i class="fa fa-plus-circle"></i> Create Category</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link active" href="#!/userform">
+                  <i class="fa fa-plus-circle"></i> Add User</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link active" href="/logout">
                   <i class="fa fa-sign-out"></i> Logout</a>
               </li>
@@ -68,7 +72,6 @@
       </div>
       <div class="col-md-10">
           <div ng-view class="view-frame"></div>
-
 
       </div>
     </div>
@@ -83,6 +86,7 @@
     <script rel="preload" src="bower_components/angular/angular.js" as="script"></script>
     <script rel="preload" src="bower_components/angular-resource/angular-resource.js" as="script"></script>
     <script rel="preload" src="bower_components/angular-route/angular-route.js" as="script"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.6.9/angular-messages.js"></script>
     <script rel="preload" src="/socket.io/socket.io.js" as="script"></script>
      <script rel="preload" src="question-list/question-list.module.js"></script>
     <script rel="preload" src="question-list/question-list.component.js"></script>
@@ -92,6 +96,8 @@
     <script rel="preload" src="question-view/question-view.component.js"></script>
     <script rel="preload" src="category-form/category-form.module.js"></script>
     <script rel="preload" src="category-form/category-form.component.js"></script>
+    <script rel="preload" src="user-form/user-form.module.js"></script>
+    <script rel="preload" src="user-form/user-form.component.js"></script>
     <script rel="preload" src="search-form/search-form.module.js"></script>
     <script rel="preload" src="search-form/search-form.component.js"></script>
     <script rel="preload" src="app.module.js"></script>

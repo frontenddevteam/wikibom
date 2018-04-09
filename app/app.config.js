@@ -20,6 +20,9 @@ config(['$locationProvider', '$routeProvider',
       when('/categoryform', {
         template: '<category-form></category-form>'
       }).
+      when('/userform', {
+        template: '<user-form></user-form>'
+      }).
       otherwise({
         templateUrl : 'welcome/welcome.template.html'
       })
