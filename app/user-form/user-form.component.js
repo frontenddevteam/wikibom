@@ -2,12 +2,19 @@ angular.module('userForm')
 .component('userForm',{
     templateUrl : 'user-form/user-form.template.html',
     controller : function userFormCtrl(){
+        this.response = {show : false};
         this.user = [
 
         ];
+        this.save = () => {
+          let self = this;
+          self.response.status = 'info';
+          self.response.mess = 'Saving user...';
+          self.response.show = true;
+        }
     }
-})
-.directive('passwordVerify', passwordVerify);
+});
+angular.module('userForm').directive('passwordVerify', passwordVerify);
 
 function passwordVerify() {
     return {

@@ -3,6 +3,7 @@
       <h4 class="card-title text-success">Add User</h4>
     </div>
       <div class="card-body">
+            <div ng-show="$ctrl.response.show" class="alert alert-{{$ctrl.response.status}}">{{$ctrl.response.mess}}</div>
             <form name="userForm">
                     <div class="row">
                         <div class="form-group col-md-6">
@@ -26,7 +27,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1" class="text-primary">Confirm Password</label>
-                                <input class="form-control" ng-model="$ctrl.user.confirmPassword" name="confirmPassword" required minlength="8" maxlength="30" password-verify="$ctrl.user.password"/>
+                                <input class="form-control" ng-model="$ctrl.user.confirmPassword" name="confirmPassword" required minlength="8" maxlength="30" password-verify="{{$ctrl.user.password}}"/>
                                 <div class="help-block" ng-messages="userForm.confirmPassword.$error" ng-show="userForm.confirmPassword.$touched || confirmPassword.password.$dirty">
                                     <span  ng-message="required"><div>Confirm Password is required.</div></span>
                                     <span  ng-message="minlength"><div>Minlength is 8.</div></span>
@@ -38,21 +39,18 @@
                                 <label for="exampleInputEmail1" class="text-primary">Display Name</label>
                                 <input class="form-control" ng-model="$ctrl.user.displayName" name="displayName" required minlength="8" maxlength="30"/>
                                 <div class="help-block" ng-messages="userForm.displayName.$error" ng-show="userForm.displayName.$touched || userForm.displayName.$dirty">
-                                    <span  ng-message="required"><div>Username is required.</div></span>
+                                    <span  ng-message="required"><div>Display Name is required.</div></span>
                                     <span  ng-message="minlength"><div>Minlength is 8.</div></span>
                                     <span  ng-message="maxlength"><div>Maxlength is 30.</div></span>
                                 </div>
                             </div>
                         
                             <div class="form-group">
-                                <button class="form-control" ng-click="$ctrl.save()">Save</button>
-                            </div>
-                            <div class="form-group">
-                                <a class="form-control" href="/">Cancel</a>                                   
+                                <button class="form-control btn-primary" ng-click="$ctrl.save()">Save</button>
                             </div>
                         </div>
                     </div>
-        
+                    <a class="btn btn-secondary btn-sm" href="/">Cancel</a>        
         
             </form>
     </div>
